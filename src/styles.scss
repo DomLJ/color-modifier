@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import "./scss/colors.scss";
+
+
+body {
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    background-color: #202020;
+    color: $primary-color;
+    margin: 0;
+}
