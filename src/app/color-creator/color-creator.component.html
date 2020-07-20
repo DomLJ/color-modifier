@@ -1,0 +1,19 @@
+<div class="color-creator">
+    <div class="color-creator__color" [class.main__color--light]="isColorDark" [ngStyle]="{background: rgbString }">
+        <div class="color-creator__color-names-container">
+            <p class="color-creator__color-name">RGB: </p>
+            <p class="color-creator__color-name">{{rgbString}}</p>
+            <p class="color-creator__color-name">HEX: </p>
+            <p class="color-creator__color-name">{{hexString | uppercase}}</p>
+            <p class="color-creator__color-name">CMYK: </p>
+            <p class="color-creator__color-name">{{cmykString}}</p>
+        </div>
+    </div>
+
+    <div class="color-creator__slider-container" >
+        <app-rgb-slider *ngFor="let item of rgbArray; trackBy: trackByFn" [colorTupple]="item"
+            (onSliderChange)="handleChange($event)"></app-rgb-slider>
+    </div>
+</div>
+
+<app-custom-hue [initialColor]="color"></app-custom-hue>

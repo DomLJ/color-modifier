@@ -1,0 +1,19 @@
+@import "../../scss/colors.scss";
+
+.rgb-slider {
+    text-align: center;
+    width: 80px;
+
+    &__range {
+        -webkit-appearance: slider-vertical;
+        width: 100%;
+    }
+
+    &__number {
+        border-radius: 5px;
+        border: none;
+        background-color: #151515;
+        color: $primary-color;
+        padding: 4px;
+    }
+}

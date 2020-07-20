@@ -1,0 +1,99 @@
+@import "../../scss/colors.scss";
+
+.gradient-creator {
+    background-color: #282828;
+    width: 90%;
+    margin: 20px auto;
+
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    padding: 25px 0;
+
+    &__gradient-string {
+        padding: 0 18px 25px 18px;
+        margin: 0;
+        text-align: center;
+    }
+
+    &__gradient {
+        height: 200px;
+        position: relative;
+    }
+
+    &__heading {
+        text-align: center;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+
+    &__button {
+        color: $primary-color;
+        background-color: #121212;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 4px;
+
+        &:hover {
+            cursor: pointer;
+            color: $secondary-color;
+        }
+
+        &--slider-toggle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        &--add-color {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            margin: 0;
+        }
+    }
+
+    &__angle-slider {
+        text-align: center;
+    }
+
+    &__angle {
+        text-align: center;
+    }
+
+    &__color-heading {
+        margin-top: 22px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__color-name {
+        width: 170px;
+        height: 100%;
+        margin: 0 4px;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+
+    &__color-preview {
+        width: 52px;
+        height: 100%;
+        border-radius: 10px;
+        margin: 0 4px;
+    }
+
+    &__slider-container {
+        display: flex;
+        justify-content: center;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.3s linear;
+
+        &--hidden {
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+        }
+    }
+}

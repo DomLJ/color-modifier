@@ -1,0 +1,9 @@
+<div class="custom-hue">
+    <div class="custom-hue__tint-tile-container" *ngFor="let shade of modifiedColorsArray">
+        <div class="custom-hue__tint-tile" 
+            [ngStyle]="{background: shade[0] }">
+            <p class="custom-hue__tint-tile-name" [class.custom-hue__tint-tile-name--light]="shade[1]" >
+                {{shade[0]}}</p>
+        </div>
+    </div>
+</div>

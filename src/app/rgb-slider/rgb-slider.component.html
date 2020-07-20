@@ -1,0 +1,7 @@
+<div class="rgb-slider">
+    <p>{{colorTupple[0] | uppercase}}</p>
+    <input class="rgb-slider__number" type="number" min="0" max="255" [formControl]="control" (ngModelChange)="handleChange($event)"
+        [(ngModel)]="colorTupple[1]">
+    <input class="rgb-slider__range" orient="vertical" type="range" min="0" max="255" [formControl]="control" (ngModelChange)="handleChange($event)"
+        [(ngModel)]="colorTupple[1]">
+</div>

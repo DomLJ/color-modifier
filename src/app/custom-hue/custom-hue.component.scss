@@ -1,0 +1,47 @@
+.custom-hue {
+    margin: 0 auto;
+    width: 90%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    padding: 30px 0;
+    border-radius: 20px;
+    background-color: #282828;
+
+
+    &__tint-tile-container {
+        position: relative;
+        color: transparent;
+
+        height: 30px;
+        width: 100%;
+        position: relative;
+    }
+
+    &__tint-tile {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+            height: calc(100% + 8px);
+            width: calc(100% + 8px);
+            z-index: 1;
+        }
+    }
+
+    &__tint-tile-name {
+        text-align: center;
+        margin: 0;
+        color: black;
+
+        &--light {
+            color: white;
+        }
+    }
+}
