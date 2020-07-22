@@ -24,6 +24,7 @@
         text-align: center;
         font-size: 18px;
         text-transform: capitalize;
+        height: 30px;
     }
 
     &__button {
@@ -50,6 +51,11 @@
             bottom: 4px;
             right: 4px;
             margin: 0;
+        }
+
+        &:disabled {
+            cursor: default;
+            color: #999999;
         }
     }
 
@@ -86,14 +92,9 @@
     &__slider-container {
         display: flex;
         justify-content: center;
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0s, opacity 0.3s linear;
 
         &--hidden {
-            visibility: hidden;
-            opacity: 0;
-            height: 0;
+            display: none;
         }
     }
 }

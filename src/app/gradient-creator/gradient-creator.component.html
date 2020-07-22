@@ -15,12 +15,14 @@
 
     <div class="gradient-creator__colorlist">
         <p class="gradient-creator__heading">Colors</p>
+        
         <div class="gradient-creator__color" *ngFor="let color of colorList; let i = index">
             <div class="gradient-creator__color-heading">
                 <p class="gradient-creator__color-name">{{RGBtoString(color)}}</p>
                 <div class="gradient-creator__color-preview" [ngStyle]="{'background-color': RGBtoString(color)}"></div>
 
-                <button (click)="deleteColor(i)" title="delete color" class="gradient-creator__button">
+                <button (click)="deleteColor(i)" title="delete color" class="gradient-creator__button"
+                [disabled]="isOnlyOneColor()">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
 

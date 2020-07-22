@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CustomHueComponent } from './custom-hue/custom-hue.component';
 import { GradientCreatorComponent } from './gradient-creator/gradient-creator.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GradientCreatorComponent } from './gradient-creator/gradient-creator.co
     RgbSliderComponent,
     NavbarComponent,
     CustomHueComponent,
-    GradientCreatorComponent
+    GradientCreatorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
