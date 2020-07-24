@@ -3,6 +3,7 @@
 .rgb-slider {
     text-align: center;
     width: 80px;
+    color: $primary-color;
 
     &__range {
         -webkit-appearance: slider-vertical;
@@ -12,7 +13,7 @@
     &__number {
         border-radius: 5px;
         border: none;
-        background-color: #151515;
+        background-color: $color-very-dark;
         color: $primary-color;
         padding: 4px;
     }

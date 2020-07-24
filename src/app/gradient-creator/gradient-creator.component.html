@@ -1,42 +1,48 @@
 <div class="gradient-creator">
-    <p class="gradient-creator__gradient-string">{{gradientString}}</p>
-    <div class="gradient-creator__gradient" [ngStyle]="{'background-image': gradientString}">
-        <button (click)="addColor()" class="gradient-creator__button gradient-creator__button--add-color"
-            title="add color">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
+    <div class="gradient-creator__gradient-container">
+        <p class="gradient-creator__gradient-string">{{gradientString}}</p>
+        <div class="gradient-creator__gradient" [ngStyle]="{'background-image': gradientString}">
+            <button (click)="addColor()" class="gradient-creator__button gradient-creator__button--add-color"
+                title="add color">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+        </div>
     </div>
 
-    <div class="gradient-creator__angle">
-        <p class="gradient-creator__heading">angle</p>
-        <input class="rgb-slider__number" type="range" min="0" max="360" (ngModelChange)="setAngle($event)"
-            [formControl]="control" [(ngModel)]="angle">
-    </div>
+    <div class="gradient-creator__options">
+        <div class="gradient-creator__angle">
+            <p class="gradient-creator__heading">angle</p>
+            <input class="rgb-slider__number" type="range" min="0" max="360" (ngModelChange)="setAngle($event)"
+                [formControl]="control" [(ngModel)]="angle">
+        </div>
 
-    <div class="gradient-creator__colorlist">
-        <p class="gradient-creator__heading">Colors</p>
-        
-        <div class="gradient-creator__color" *ngFor="let color of colorList; let i = index">
-            <div class="gradient-creator__color-heading">
-                <p class="gradient-creator__color-name">{{RGBtoString(color)}}</p>
-                <div class="gradient-creator__color-preview" [ngStyle]="{'background-color': RGBtoString(color)}"></div>
+        <div class="gradient-creator__colorlist">
+            <p class="gradient-creator__heading">Colors</p>
 
-                <button (click)="deleteColor(i)" title="delete color" class="gradient-creator__button"
-                [disabled]="isOnlyOneColor()">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </button>
+            <div class="gradient-creator__color" *ngFor="let color of colorList; let i = index">
+                <div class="gradient-creator__color-heading">
+                    <p class="gradient-creator__color-name">{{RGBtoString(color)}}</p>
+                    <div class="gradient-creator__color-preview" [ngStyle]="{'background-color': RGBtoString(color)}">
+                    </div>
 
-                <button (click)="toggleSlidersVisibility(i)" title="toggle slider"
-                    class="gradient-creator__button gradient-creator__button--slider-toggle">
-                    <i class="fa" [ngClass]="{'fa-angle-down': !visibilityArray[i], 'fa-angle-up': visibilityArray[i]}"
-                        aria-hidden="true"></i>
-                </button>
-            </div>
+                    <button (click)="deleteColor(i)" title="delete color" class="gradient-creator__button"
+                        [disabled]="isOnlyOneColor()">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
 
-            <div class="gradient-creator__slider-container"
-                [ngClass]="{'gradient-creator__slider-container--hidden': !visibilityArray[i] }">
-                <app-rgb-slider *ngFor="let item of rgbToArray(color); trackBy: trackByFn" [colorTupple]="item"
-                    (onSliderChange)="handleChange($event, i)"></app-rgb-slider>
+                    <button (click)="toggleSlidersVisibility(i)" title="toggle slider"
+                        class="gradient-creator__button gradient-creator__button--slider-toggle">
+                        <i class="fa"
+                            [ngClass]="{'fa-angle-down': !visibilityArray[i], 'fa-angle-up': visibilityArray[i]}"
+                            aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="gradient-creator__slider-container"
+                    [ngClass]="{'gradient-creator__slider-container--hidden': !visibilityArray[i] }">
+                    <app-rgb-slider *ngFor="let item of rgbToArray(color); trackBy: trackByFn" [colorTupple]="item"
+                        (onSliderChange)="handleChange($event, i)"></app-rgb-slider>
+                </div>
             </div>
         </div>
     </div>

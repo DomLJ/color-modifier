@@ -1,0 +1,40 @@
+@import "../../scss/colors.scss";
+
+.about {
+    width: 90%;
+    margin: 0 auto 20px;
+    
+    &__section-heading{
+        text-align: center;
+        margin: 24px 0;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding-left: 26px;
+    }
+
+    &__paragraph {
+        padding-left: 26px;
+    }
+
+    &__list-element{
+        margin-bottom: 5px;
+        &::before {
+            content: "- ";
+        }
+    }
+
+    &__heading {
+        margin: 22px 0;
+    }
+
+    &__link {
+        color: $primary-color;
+        
+        &:hover {
+            text-decoration: none;
+            color: $secondary-color;
+        }
+    }
+}
