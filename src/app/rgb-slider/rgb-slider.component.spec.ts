@@ -17,7 +17,7 @@ describe('RgbSliderComponent', () => {
     fixture = TestBed.createComponent(RgbSliderComponent);
     component = fixture.componentInstance;
     // mock colorTupple input value
-    component.colorTupple = ["r", 33];
+    component.colorTupple = ['r', 33];
 
     fixture.detectChanges();
   });
@@ -27,18 +27,18 @@ describe('RgbSliderComponent', () => {
   });
 
   it('should display proper input values', () => {
-    expect(component.colorTupple[0]).toBe("r");
+    expect(component.colorTupple[0]).toBe('r');
     expect(component.colorTupple[1]).toBe(33);
     expect(component.colorTupple[1]).not.toBe(0);
   });
 
   it('emits proper values on change', () => {
-    component.colorTupple = ["c", 222]
-  
-    spyOn(component.onSliderChange, "emit")
+    component.colorTupple = ['c', 222];
 
-    component.handleChange(111)
+    spyOn(component.sliderChange, 'emit');
 
-    expect(component.onSliderChange.emit).toHaveBeenCalledWith(["c", 111])
+    component.handleChange(111);
+
+    expect(component.sliderChange.emit).toHaveBeenCalledWith(['c', 111]);
   });
 });

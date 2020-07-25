@@ -15,7 +15,7 @@
 
         <div class="color-creator__slider-container">
             <app-rgb-slider *ngFor="let item of rgbArray; trackBy: trackByFn" [colorTupple]="item"
-                (onSliderChange)="handleChange($event)"></app-rgb-slider>
+                (sliderChange)="handleChange($event)"></app-rgb-slider>
         </div>
 
     </div>

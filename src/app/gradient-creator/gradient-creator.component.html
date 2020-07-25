@@ -41,7 +41,7 @@
                 <div class="gradient-creator__slider-container"
                     [ngClass]="{'gradient-creator__slider-container--hidden': !visibilityArray[i] }">
                     <app-rgb-slider *ngFor="let item of rgbToArray(color); trackBy: trackByFn" [colorTupple]="item"
-                        (onSliderChange)="handleChange($event, i)"></app-rgb-slider>
+                        (sliderChange)="handleChange($event, i)"></app-rgb-slider>
                 </div>
             </div>
         </div>

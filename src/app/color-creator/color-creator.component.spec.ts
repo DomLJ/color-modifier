@@ -24,11 +24,11 @@ describe('ColorCreator', () => {
   });
 
   it('should correctly tell if color is dark', () => {
-    component.color = { r: 1, g: 1, b: 1 }
+    component.color = { r: 1, g: 1, b: 1 };
 
     expect(component.isColorDark).toBe(true);
 
-    component.color = { r: 220, g: 240, b: 222 }
+    component.color = { r: 220, g: 240, b: 222 };
 
     expect(component.isColorDark).toBe(false);
   });

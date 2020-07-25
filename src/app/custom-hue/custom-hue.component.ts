@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RGBColor, getShade, getTint, isColorDark } from "@utils/colorUtils";
-import { RGBtoHex } from "@utils/colorConversionUtils";
+import { RGBColor, getShade, getTint, isColorDark } from '@utils/colorUtils';
+import { RGBtoHex } from '@utils/colorConversionUtils';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { RGBtoHex } from "@utils/colorConversionUtils";
   styleUrls: ['./custom-hue.component.scss']
 })
 export class CustomHueComponent implements OnInit {
-  @Input() initialColor: RGBColor
+  @Input() initialColor: RGBColor;
 
   constructor() { }
 
@@ -17,31 +17,31 @@ export class CustomHueComponent implements OnInit {
   }
 
   get modifiedColorsArray(): [string, boolean][] {
-    let colorArray: [string, boolean][] = []
+    const colorArray: [string, boolean][] = [];
 
     for (let i = 1; ; i++) {
-      const newTint = getTint(this.initialColor, i / 10)
-      const hexTint = RGBtoHex(newTint).toUpperCase()
+      const newTint = getTint(this.initialColor, i / 10);
+      const hexTint = RGBtoHex(newTint).toUpperCase();
 
-      colorArray.push([hexTint, isColorDark(newTint)])
+      colorArray.push([hexTint, isColorDark(newTint)]);
 
-      if (hexTint === "#FFFFFF") {
-        break
+      if (hexTint === '#FFFFFF') {
+        break;
       }
     }
-    colorArray.reverse()
+    colorArray.reverse();
 
     for (let i = 0; ; i++) {
-      const newShade = getShade(this.initialColor, i / 10)
-      const hexShade = RGBtoHex(newShade).toUpperCase()
+      const newShade = getShade(this.initialColor, i / 10);
+      const hexShade = RGBtoHex(newShade).toUpperCase();
 
-      colorArray.push([hexShade, isColorDark(newShade)])
+      colorArray.push([hexShade, isColorDark(newShade)]);
 
-      if (hexShade === "#000000") {
-        break
+      if (hexShade === '#000000') {
+        break;
       }
     }
 
-    return colorArray
+    return colorArray;
   }
 }

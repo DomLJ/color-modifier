@@ -17,7 +17,7 @@ describe('CustomHueComponent', () => {
     fixture = TestBed.createComponent(CustomHueComponent);
     component = fixture.componentInstance;
 
-    component.initialColor = { r: 3, g: 125, b: 99 }
+    component.initialColor = { r: 3, g: 125, b: 99 };
 
     fixture.detectChanges();
   });
@@ -31,7 +31,6 @@ describe('CustomHueComponent', () => {
     expect(component.initialColor.r).toBe(3);
     expect(component.initialColor.g).toBe(125);
     expect(component.initialColor.b).toBe(99);
-    
     expect(component.initialColor.b).not.toBe(66);
   });
 
