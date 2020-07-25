@@ -16,7 +16,7 @@ export class RgbSliderComponent implements OnInit {
     this.control = new FormControl(this.colorTupple[1])
   }
 
-  handleChange(value) {
+  handleChange(value: number) {
     if (value !== this.colorTupple[1]) {
       this.onSliderChange.emit([this.colorTupple[0], clamp(value, 0, 255)])
     }

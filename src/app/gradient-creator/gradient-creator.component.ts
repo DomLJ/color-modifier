@@ -16,7 +16,6 @@ export class GradientCreatorComponent implements OnInit {
   colorList: RGBColor[]
   visibilityArray: boolean[]
   angle: number
-  @Output() onSliderChange = new EventEmitter<number>();
   control: FormControl
 
   ngOnInit(): void {
@@ -60,7 +59,7 @@ export class GradientCreatorComponent implements OnInit {
 
   setAngle(angle: number) {
     if (this.angle !== angle) {
-      this.angle = clamp(angle, 0, 255)
+      this.angle = clamp(angle, 0, 360)
     }
   }
 

@@ -8,9 +8,9 @@ describe('ColorCreator', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ColorCreatorComponent ]
+      declarations: [ColorCreatorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,15 @@ describe('ColorCreator', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should correctly tell if color is dark', () => {
+    component.color = { r: 1, g: 1, b: 1 }
+
+    expect(component.isColorDark).toBe(true);
+
+    component.color = { r: 220, g: 240, b: 222 }
+
+    expect(component.isColorDark).toBe(false);
   });
 });
