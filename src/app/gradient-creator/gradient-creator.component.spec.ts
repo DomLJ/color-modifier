@@ -54,8 +54,8 @@ describe('GradientCreatorComponent', () => {
   });
 
   it('colorListString returns correct colorString', () => {
-    component.colorList = [{ r: 55, g: 54, b: 22 }]
+    component.colorList = [{ r: 55, g: 54, b: 22 }];
 
-    expect(component.colorListString).toBe("rgb(55, 54, 22), rgb(55, 54, 22)");
+    expect(component.colorListString).toBe('rgb(55, 54, 22), rgb(55, 54, 22)');
   });
 });
