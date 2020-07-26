@@ -8,9 +8,9 @@ describe('GradientCreatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GradientCreatorComponent ]
+      declarations: [GradientCreatorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -53,4 +53,9 @@ describe('GradientCreatorComponent', () => {
     expect(component.angle).toBe(0);
   });
 
+  it('colorListString returns correct colorString', () => {
+    component.colorList = [{ r: 55, g: 54, b: 22 }]
+
+    expect(component.colorListString).toBe("rgb(55, 54, 22), rgb(55, 54, 22)");
+  });
 });

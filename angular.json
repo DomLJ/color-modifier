@@ -127,8 +127,13 @@
               "devServerTarget": "color-modifier:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "color-modifier"
 }
